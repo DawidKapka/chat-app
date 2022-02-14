@@ -4,11 +4,12 @@ import {DbService} from "./services/db-service";
 import {MongooseModule} from "@nestjs/mongoose";
 import { MessageSchema } from './schemas/message.schema';
 
+var configJson = require('../dbCredentials.json');
 
 @Module({
   imports: [
       MongooseModule.forRoot(
-          'mongodb+srv://root:v4pbqIFy8qLrDtHM@chatapp.rzk4l.mongodb.net/chat-app',
+          `mongodb+srv://${configJson.user}:${configJson.password}@chatapp.rzk4l.mongodb.net/chat-app`,
           {
             connectionName: 'chatApp'
           }
