@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="login-box">
+    <div class="login-box__input">
+      <div class="login-box__input__login" *ngIf="method === 'login'">
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Username: </mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Password: </mat-label>
+          <input matInput type="password">
+        </mat-form-field>
+      </div>
+      <div class="login-box__input__register" *ngIf="method === 'register'">
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Username: </mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Email: </mat-label>
+          <input matInput type="email">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+          <mat-label>Password: </mat-label>
+          <input matInput type="password">
+        </mat-form-field>
+      </div>
+      <div class="login-box__login-button">
+        <button mat-raised-button color="primary">{{method === 'login' ? 'Login' : 'Register'}}</button>
+      </div>
+      <div class="login-box__method-toggle">
+        <a (click)="toggleMethod()">{{method === 'login' ? 'Register' : 'Login'}}</a>
+      </div>
+    </div>
+  </div>
+</div>

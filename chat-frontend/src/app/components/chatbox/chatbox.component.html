@@ -1,0 +1,14 @@
+<div class="chat-box">
+  <div class="message-box">
+    <app-message-bubble *ngFor="let message of messages" [message]="message"></app-message-bubble>
+  </div>
+  <div class="input-box">
+      <mat-form-field appearance="fill" class="message-input">
+        <input matInput placeholder="Send a message..." [(ngModel)]="textInput" (keydown.enter)="sendMessage(textInput)">
+      </mat-form-field>
+      <button mat-raised-button class="send-button" (click)="sendMessage(textInput)">Send</button>
+    <mat-form-field appearance="fill" class="message-input">
+      <input matInput placeholder="Username" [(ngModel)]="userInfoService.username">
+    </mat-form-field>
+  </div>
+</div>
