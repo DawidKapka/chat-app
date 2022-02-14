@@ -53,5 +53,15 @@
         }
       }
     }
+
+    &__error {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 12px;
+
+      &__text {
+        color: red;
+      }
+    }
   }
 }
