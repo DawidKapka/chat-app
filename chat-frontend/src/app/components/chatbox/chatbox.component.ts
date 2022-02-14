@@ -10,17 +10,18 @@ import {UserInfoService} from "../../services/user-info.service";
 })
 export class ChatboxComponent{
   textInput: string = '';
-
+  username: string = this.userInfoService.getUsername();
   messages: Message[] = [];
 
   constructor(private messageService: MessageService, public userInfoService: UserInfoService) {
     this.fetchMessages()
+
   }
 
   sendMessage(value: string) {
     let message: Message = {
       value: value,
-      sender: this.userInfoService.username,
+      sender: this.userInfoService.getUsername(),
     }
     this.messageService.send(message).subscribe(() => this.fetchMessages());
     this.textInput = '';

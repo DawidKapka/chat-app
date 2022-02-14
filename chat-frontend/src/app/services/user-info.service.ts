@@ -4,5 +4,14 @@ import {Injectable} from "@angular/core";
   providedIn: "root"
 })
 export class UserInfoService {
-  username: string = '';
+  private username: string = '';
+  private email: string = '';
+
+  getUsername(): string { return this.username; }
+
+  setUsername(value: string): void { this.username = value; }
+
+  getEmail(): string { return this.email }
+
+  setEmail(value: string): void { this.email = value; }
 }

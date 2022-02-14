@@ -7,8 +7,6 @@
         <input matInput placeholder="Send a message..." [(ngModel)]="textInput" (keydown.enter)="sendMessage(textInput)">
       </mat-form-field>
       <button mat-raised-button class="send-button" (click)="sendMessage(textInput)">Send</button>
-    <mat-form-field appearance="fill" class="message-input">
-      <input matInput placeholder="Username" [(ngModel)]="userInfoService.username">
-    </mat-form-field>
+      <p class="input-box__username">Username: {{username}}</p>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="bubble" [ngClass]="{'bubble__is-sent': message.sender === userInfoService.username}">
+<div class="bubble" [ngClass]="{'bubble__is-sent': message.sender === userInfoService.getUsername()}">
   <div class="bubble__content">
     <span class="bubble__text">{{message.value}}</span><br>
     <span class="bubble__sender">{{message.sender}}</span>
