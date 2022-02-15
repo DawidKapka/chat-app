@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import {DbService} from "./services/db-service";
 import {MongooseModule} from "@nestjs/mongoose";
 import { MessageSchema } from './schemas/message.schema';
+import { UserController } from './user/user.controller';
+import {UserSchema} from "./schemas/user.schema";
 
 var configJson = require('../dbCredentials.json');
 
@@ -19,10 +21,16 @@ var configJson = require('../dbCredentials.json');
               name: 'Message',
               schema: MessageSchema,
               collection: 'messages'
+          },
+          {
+              name: 'User',
+              schema: UserSchema,
+              collection: 'users'
           }
       ], 'chatApp'),
+
   ],
-  controllers: [AppController],
+  controllers: [AppController, UserController],
   providers: [DbService],
 })
 export class AppModule {}

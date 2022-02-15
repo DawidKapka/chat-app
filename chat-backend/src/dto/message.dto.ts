@@ -8,4 +8,8 @@ export class MessageDto {
     @IsString()
     @IsNotEmpty()
     sender: string;
+
+    @IsString()
+    @IsNotEmpty()
+    senderMail: string;
 }

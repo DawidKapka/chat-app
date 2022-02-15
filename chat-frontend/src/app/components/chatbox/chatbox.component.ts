@@ -22,6 +22,7 @@ export class ChatboxComponent{
     let message: Message = {
       value: value,
       sender: this.userInfoService.getUsername(),
+      senderMail: this.userInfoService.getEmail()
     }
     this.messageService.send(message).subscribe(() => this.fetchMessages());
     this.textInput = '';

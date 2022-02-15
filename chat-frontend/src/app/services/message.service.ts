@@ -12,7 +12,8 @@ export class MessageService {
   send(message: Message) {
     return this.http.post('http://localhost:3000/messages', {
       value: message.value,
-      sender: message.sender
+      sender: message.sender,
+      senderMail: message.senderMail,
     });
   }
 

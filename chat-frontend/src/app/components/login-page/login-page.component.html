@@ -25,6 +25,9 @@
           <input matInput type="password" [(ngModel)]="registerInfo.passwordHash">
         </mat-form-field>
       </div>
+      <div class="login-box__stay-logged">
+        <mat-checkbox (change)="setStayLoggedIn()" [checked]="stayLogged" *ngIf="method === 'login'">Stay logged in</mat-checkbox>
+      </div>
       <div class="login-box__login-button">
         <button mat-raised-button color="primary" (click)="submitForm()">{{method === 'login' ? 'Login' : 'Register'}}</button>
       </div>
@@ -33,6 +36,9 @@
       </div>
       <div class="login-box__error" *ngIf="errors.length > 0">
         <p class="login-box__error__text" *ngFor="let error of errors">{{error}}</p>
+      </div>
+      <div class="login-box__register-success">
+        <p class="login-box__register-success__text" [ngClass]="{'login-box__register-success__text__not-visible': !isSuccessVisible}">Registration Successful! Please log in</p>
       </div>
     </div>
   </div>

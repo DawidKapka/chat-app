@@ -11,13 +11,19 @@ import { MessageBubbleComponent } from './components/message-bubble/message-bubb
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatIconModule} from "@angular/material/icon";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatboxComponent,
     MessageBubbleComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,11 @@ import { LoginPageComponent } from './components/login-page/login-page.component
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

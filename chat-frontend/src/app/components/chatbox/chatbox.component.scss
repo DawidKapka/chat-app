@@ -1,12 +1,12 @@
 .chat-box {
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
   border: 1px solid black;
   margin: auto;
 }
 
 .message-box {
-  width: 100%;
+  width: 80vw;
   height: 90%;
   border: 1px solid gray;
   background: gray;
@@ -21,4 +21,11 @@
   margin: 20px;
 }
 
+.drawer-menu {
+  width: 20vw;
+}
+
+mat-drawer-content {
+  overflow: hidden;
+}
 

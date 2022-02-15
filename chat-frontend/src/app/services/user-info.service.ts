@@ -14,4 +14,9 @@ export class UserInfoService {
   getEmail(): string { return this.email }
 
   setEmail(value: string): void { this.email = value; }
+
+  clear(): void {
+    this.setEmail('');
+    this.setUsername('');
+  }
 }

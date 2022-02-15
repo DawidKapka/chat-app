@@ -8,7 +8,7 @@ import {UserInfoService} from "../../services/user-info.service";
   styleUrls: ['./message-bubble.component.scss']
 })
 export class MessageBubbleComponent implements OnInit {
-  @Input() message: Message = {value: '', sender: ''};
+  @Input() message: Message = {value: '', sender: '', senderMail: ''};
 
   constructor(public userInfoService: UserInfoService) { }
 

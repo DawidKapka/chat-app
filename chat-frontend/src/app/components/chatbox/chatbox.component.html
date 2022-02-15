@@ -1,12 +1,18 @@
-<div class="chat-box">
-  <div class="message-box">
-    <app-message-bubble *ngFor="let message of messages" [message]="message"></app-message-bubble>
-  </div>
-  <div class="input-box">
-      <mat-form-field appearance="fill" class="message-input">
-        <input matInput placeholder="Send a message..." [(ngModel)]="textInput" (keydown.enter)="sendMessage(textInput)">
-      </mat-form-field>
-      <button mat-raised-button class="send-button" (click)="sendMessage(textInput)">Send</button>
-      <p class="input-box__username">Username: {{username}}</p>
-  </div>
-</div>
+<mat-drawer-container class="drawer-container">
+  <mat-drawer mode="side" opened class="drawer-menu">
+    <app-side-menu></app-side-menu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="chat-box">
+      <div class="message-box">
+        <app-message-bubble *ngFor="let message of messages" [message]="message"></app-message-bubble>
+      </div>
+      <div class="input-box">
+        <mat-form-field appearance="fill" class="message-input">
+          <input matInput placeholder="Send a message..." [(ngModel)]="textInput" (keydown.enter)="sendMessage(textInput)">
+        </mat-form-field>
+        <button mat-raised-button class="send-button" (click)="sendMessage(textInput)">Send</button>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

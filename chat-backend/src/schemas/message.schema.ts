@@ -7,6 +7,7 @@ export type MessageDocument = Message & Document;
 export class Message {
     @Prop() value: string;
     @Prop() sender: string;
+    @Prop() senderMail: string;
 }
 
 export const MessageSchema = SchemaFactory.createForClass(Message);

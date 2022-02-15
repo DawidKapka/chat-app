@@ -63,5 +63,19 @@
         color: red;
       }
     }
+
+    &__register-success {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 12px;
+
+      &__text {
+        color: green;
+
+        &__not-visible {
+          display: none;
+        }
+      }
+    }
   }
 }
