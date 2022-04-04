@@ -1,0 +1,13 @@
+<div class="friend-list">
+  <p class="mat-headline friend-list__title">Contacts<mat-icon class="friend-list__title__icon">perm_identity</mat-icon></p>
+  <div class="friend-list__friends-wrapper">
+    <div class="friend-list__friend-field" *ngFor="let friend of friendList">
+      <mat-divider></mat-divider>
+      <div class="friend">
+        <mat-icon class="friend__icon">account_circle</mat-icon>
+        <p class="friend__username mat-subheading-2">{{friend.username}}</p>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div>

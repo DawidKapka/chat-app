@@ -12,22 +12,7 @@
     <button mat-raised-button color="primary" (click)="signOut()">Sign out</button>
   </div>
   <mat-divider></mat-divider>
-  <div class="friend-finder">
-    <div class="friend-finder__button-wrapper">
-      <button mat-raised-button color="primary" (click)="toggleFriendFindMenu()" class="friend-finder__button"><mat-icon>{{friendAddMenuShown ? 'clear' : 'add'}}</mat-icon>{{friendAddMenuShown ? 'Close' : 'Add Friends'}}</button>
-    </div>
-    <div class="friend-finder__search" *ngIf="friendAddMenuShown">
-      <mat-divider></mat-divider>
-        <div class="friend-finder__user" *ngFor="let user of usersList">
-          <div class="friend-finder__user-field" *ngIf="user.username !== username">
-            <div class="friend-finder__user-field__wrapper">
-              <button mat-icon-button color="primary" class="friend-finder__user-field__add" (click)="addFriend(user)"><mat-icon>add</mat-icon></button>
-              <mat-icon class="friend-finder__user-field__icon">account_circle</mat-icon>
-              <p class="friend-finder__user-field__username mat-subheading-2">{{user.username}}</p>
-            </div>
-          </div>
-        </div>
-      <mat-divider></mat-divider>
-    </div>
-  </div>
+  <app-friend-finder></app-friend-finder>
+  <mat-divider></mat-divider>
+  <app-friend-list></app-friend-list>
 </div>

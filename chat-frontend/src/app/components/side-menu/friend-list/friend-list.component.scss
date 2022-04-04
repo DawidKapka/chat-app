@@ -1,0 +1,31 @@
+.friend-list {
+  padding-top: 24px;
+
+  &__title {
+    padding-left: 24px;
+
+    &__icon {
+      transform: translateY(4px);
+    }
+  }
+
+  .friend {
+    display: flex;
+    padding: 24px;
+
+    &__icon {
+      position: relative;
+      left: 0;
+      transform: scale(2) translateY(2px);
+      margin-top: 6px;
+    }
+
+    &__username {
+      position: relative;
+      left: 24px;
+      margin-bottom: 0;
+      margin-top: 6px;
+      font-weight: bold;
+    }
+  }
+}
