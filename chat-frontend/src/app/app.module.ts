@@ -16,6 +16,8 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatIconModule} from "@angular/material/icon";
 import {MatDividerModule} from "@angular/material/divider";
+import { FriendFinderComponent } from './components/side-menu/friend-finder/friend-finder.component';
+import { FriendListComponent } from './components/side-menu/friend-list/friend-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {MatDividerModule} from "@angular/material/divider";
     ChatboxComponent,
     MessageBubbleComponent,
     LoginPageComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    FriendFinderComponent,
+    FriendListComponent
   ],
   imports: [
     BrowserModule,

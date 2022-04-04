@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ConfigService} from "./config.service";
 import {UserInfoService} from "./user-info.service";
+import {User} from "../models/user.model";
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,25 @@ export class UsersService {
       that.http.post(`${that.config.getApiUrl()}/user/friends/add`, {userId: id, friendId: _id}).subscribe(res => {
         resolve(res as boolean);
       })
+    })
+  }
+
+  getUserFromId(id: string): Promise<User> {
+    return new Promise((resolve) => {
+      this.http.get(`${this.config.getApiUrl()}/user/${id}`).subscribe(res => resolve(res as User))
+    });
+  }
+
+  async fetchFriends(): Promise<User[]> {
+    const id = await this.getUserId(this.userInfoService.getEmail())
+    return new Promise((resolve) => {
+      this.http.get(`${this.config.getApiUrl()}/user/${id}/friends`).subscribe(async res => {
+        const users: User[] = [];
+        for (let id of (res as string[])) {
+          users.push(await this.getUserFromId(id));
+        }
+        resolve(users);
+      });
     })
   }
 }

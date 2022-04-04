@@ -95,4 +95,16 @@ export class DbService {
       });
     });
   }
+
+  async getUserFriends(id: string) {
+    return new Promise((resolve) => {
+      this.userModel.findOne({ _id: id }).exec((error, record) => {
+        resolve(record.friends);
+      });
+    });
+  }
+
+  findUserById(id: string) {
+    return this.userModel.findOne({ _id: id });
+  }
 }

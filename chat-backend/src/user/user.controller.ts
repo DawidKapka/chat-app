@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Param, Post, Query, Res} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, Res } from '@nestjs/common';
 import { DbService } from '../services/db-service';
 import { UserInfoDto } from '../dto/userInfo.dto';
 
@@ -40,5 +40,15 @@ export class UserController {
   async getUserIdByEmail(@Body() body: { email: string }, @Res() res) {
     const id = await this.dbService.findUserIdByEmail(body.email);
     res.send({ id: id });
+  }
+
+  @Get(':id/friends')
+  getUserFriends(@Param('id') id: string) {
+    return this.dbService.getUserFriends(id);
+  }
+
+  @Get(':id')
+  findUserById(@Param('id') id: string) {
+    return this.dbService.findUserById(id);
   }
 }

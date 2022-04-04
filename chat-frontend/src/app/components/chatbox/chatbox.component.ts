@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Message} from "../../models/message.model";
 import {MessageService} from "../../services/message.service";
 import {UserInfoService} from "../../services/user-info.service";
+import {UsersService} from "../../services/users.service";
 
 @Component({
   selector: 'app-chatbox',
@@ -13,18 +14,18 @@ export class ChatboxComponent{
   username: string = this.userInfoService.getUsername();
   messages: Message[] = [];
 
-  constructor(private messageService: MessageService, public userInfoService: UserInfoService) {
+  constructor(private messageService: MessageService, public userInfoService: UserInfoService, private usersService: UsersService) {
     this.fetchMessages()
 
   }
 
-  sendMessage(value: string) {
+  async sendMessage(value: string) {
     let message: Message = {
       value: value,
-      sender: this.userInfoService.getUsername(),
-      senderMail: this.userInfoService.getEmail()
+      sender: await this.usersService.getUserId(this.userInfoService.getEmail()) as string,
+      senderName: this.userInfoService.getUsername()
     }
-    this.messageService.send(message).subscribe(() => this.fetchMessages());
+    this.messageService.send(message).subscribe(res => this.fetchMessages());
     this.textInput = '';
 
   }
